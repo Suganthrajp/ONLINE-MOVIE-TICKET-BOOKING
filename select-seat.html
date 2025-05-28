@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Select Your Seat</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header><h1>Select Seats</h1></header>
+
+  <section class="seats">
+    <div class="seat-row">
+      <button class="seat" onclick="selectSeat(this)">A1</button>
+      <button class="seat" onclick="selectSeat(this)">A2</button>
+      <button class="seat" onclick="selectSeat(this)">A3</button>
+    </div>
+    <div class="seat-row">
+      <button class="seat" onclick="selectSeat(this)">B1</button>
+      <button class="seat" onclick="selectSeat(this)">B2</button>
+      <button class="seat" onclick="selectSeat(this)">B3</button>
+    </div>
+    <button onclick="confirmBooking()">Confirm</button>
+  </section>
+
+  <script>
+    let selectedSeats = [];
+    function selectSeat(btn) {
+      const seat = btn.innerText;
+      btn.classList.toggle("selected");
+      if (selectedSeats.includes(seat)) {
+        selectedSeats = selectedSeats.filter(s => s !== seat);
+      } else {
+        selectedSeats.push(seat);
+      }
+    }
+
+    function confirmBooking() {
+      localStorage.setItem("selectedSeats", JSON.stringify(selectedSeats));
+      window.location.href = "confirmation.html";
+    }
+  </script>
+</body>
+</html>

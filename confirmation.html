@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Booking Confirmation</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header><h1>🎫 Booking Confirmation</h1></header>
+  <section class="confirmation">
+    <p>✅ Thank you for booking!</p>
+    <p><strong>Your Seats:</strong> <span id="seat-info"></span></p>
+    <p>Enjoy the show 🍿</p>
+  </section>
+
+  <script>
+    const seats = JSON.parse(localStorage.getItem("selectedSeats"));
+    document.getElementById("seat-info").innerText = seats.join(", ");
+  </script>
+</body>
+</html>

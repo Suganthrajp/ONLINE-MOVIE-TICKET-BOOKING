@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Movie Details</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header><h1>🎥 Jawan</h1></header>
+
+  <section class="movie-detail">
+    <iframe width="100%" height="315" src="https://image.tmdb.org/t/p/original/bMISXhkBDll6JPsevdJJ1ItnW6S.jpg " frameborder="0" allowfullscreen></iframe>
+    <p><strong>Genre:</strong> Action, Thriller</p>
+    <p><strong>Duration:</strong> 2h 45min</p>
+    <p><strong>Description:</strong> An intense action-packed movie with a gripping story.</p>
+    <button onclick="goToSeatPage()">Book Your Seat</button>
+  </section>
+
+  <script>
+    function goToSeatPage() {
+      window.location.href = "select-seat.html";
+    }
+  </script>
+</body>
+</html>
